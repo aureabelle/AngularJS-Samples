@@ -1,0 +1,90 @@
+<div class="activity-list">
+	
+	<ul class="filter">
+		<li><a href="#" data-ng-click="showAllResults($event)" class="selected">All Activities</a></li>
+		<li data-ng-repeat="category in categories"><a href="#" data-ng-click="filterResult(category, $event)">{{ category }}</a></li>
+	</ul>
+	
+	<hr />
+	
+	<label for="filter_input">Search</label>
+	<input type="text" data-ng-model="searcher" id="filter_input" />
+	
+	<hr />
+	
+	<div class="activities">
+		<div class="activity-item" data-ng-repeat="activity in activities | filter: searcher | limitTo:limit" data-ng-animate="'activity'">
+			<span class="activity-info activity-category">{{ activity.category }}</span>
+			<span class="activity-info activity-title"><a href="{{activity.link}}">{{ activity.title }}</a></span>
+			
+			<div class="activity-info activity-description" data-ng-switch on="activity.category">
+				<!-- Business Start -->
+				<div data-ng-switch-when="Business">
+					<div data-ng-switch on="activity.feature.name">
+						
+						<div data-ng-switch-when="website">
+							<p>Your website, <strong>{{ activity.feature.properties.url }}</strong>, has been <em>{{ activity.feature.properties.status }}</em>.</p>
+						</div>
+						
+						<div data-ng-switch-when="payment button">
+							<p>You <em>{{ activity.feature.properties.status }}</em> a <strong>{{ activity.feature.properties.type }}</strong> button.</p>
+						</div>
+						
+						<div data-ng-switch-when="terms of service">TOS description</div>
+						
+					</div>
+				</div>
+				<!-- Business End -->
+				
+				<!-- Profile Start -->
+				<div data-ng-switch-when="Profile">
+					<div data-ng-switch on="activity.feature.name">
+						
+						<div data-ng-switch-when="email address">
+							<p>You <em>{{ activity.feature.properties.state }}</em> your email <strong>{{ activity.feature.properties.value }}</strong>.</p>
+						</div>
+						
+						<div data-ng-switch-when="credit card">
+							<p>Your <strong>{{ activity.feature.properties.type }}</strong> ending in <strong>{{ activity.feature.properties.number }}</strong> <em>{{ activity.feature.properties.state }}</em>.</p>
+						</div>
+						
+						<div data-ng-switch-default="">
+							<p>You {{ activity.feature.properties.state }} your {{ activity.feature.properties.type }}.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Profile End -->
+				
+				<!-- Transactions Start -->
+				<div data-ng-switch-default="">
+					<div data-ng-switch on="activity.feature.name">
+						
+						<div data-ng-switch-when="send funds">
+							<p>You {{ activity.feature.properties.action }} <strong>{{ activity.feature.properties.amount | currency: activity.feature.properties.currency_symbol }} {{ activity.feature.properties.currency }}</strong> to <em>{{ activity.feature.properties.receiver }}</em>.</p>
+						</div>
+						
+						<div data-ng-switch-when="mass payment">
+							<p>You {{ activity.feature.properties.action }}.</p>
+						</div>
+						
+						<div data-ng-switch-when="deposit">
+							<p>You {{ activity.feature.properties.action }} <strong>{{ activity.feature.properties.amount | currency: activity.feature.properties.currency_symbol }} {{ activity.feature.properties.currency }}</strong> to your balance by <em>{{ activity.feature.properties.method }}.</em></p>
+						</div>
+						
+						<div data-ng-switch-when="send email invoice">
+							<p>You {{ activity.feature.properties.action }} of <strong>{{ activity.feature.properties.amount | currency: activity.feature.properties.currency_symbol }} {{ activity.feature.properties.currency }}</strong> to <em>{{ activity.feature.properties.receiver }}</em>.</p>
+						</div>
+						
+					</div>
+				</div>
+				<!-- Transactions End -->
+			</div>
+			
+			
+			<span class="activity-info activity-timestamp">{{ activity.timestamp}}</span>
+		</div>
+	
+	</div>
+	
+	<a href="#" data-ng-click="loadMore($event)" data-ng-hide="countItemsLoaded() >= activities.length">Load more items</a>
+</div>

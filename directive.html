@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="directiveSampleApp">
+  <head>
+    <script src="http://code.angularjs.org/1.0.6/angular.min.js"></script>
+    <script>
+		angular.module('directiveSampleApp', []).directive('contenteditable', function() {
+		  return {
+			require: 'ngModel',
+			link: function(scope, elm, attrs, ctrl) {
+			  
+			  
+			  // view -> model
+			  elm.bind('focus', function(){
+				elm.addClass('el-focus');
+			  });
+			  
+			  elm.bind('blur', function(){
+				elm.removeClass('el-focus');
+			  });
+			  
+			  elm.bind('keyup', function() {				
+				scope.$apply(function() {
+				  ctrl.$setViewValue(elm.html());
+				});
+			  });
+			
+			console.log(ctrl);
+			
+			  // model -> view
+			  ctrl.$render = function(value) {
+				elm.html(value);
+			  };
+		 
+			  // load init value from DOM
+			  ctrl.$setViewValue(elm.html());
+			}
+		  };
+		});
+	</script>
+	<style type="text/css">
+		div[contentEditable] {
+		  cursor: pointer;
+		  background-color: #D0D0D0;
+		  margin-bottom: 1em;
+		  padding: 1em;
+		}
+	</style>
+  </head>
+  <body>
+    <div contentEditable="true" ng-model="content" title="Click to edit.">Edit Me</div>
+    <pre>model = {{content}}</pre>
+  </body>
+</html>
