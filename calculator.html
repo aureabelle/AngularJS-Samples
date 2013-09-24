@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-US" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller="InvoiceCntl">
+		<h1>Invoice</h1>
+		<label for="qty">Quantity</label>
+		<input type="integer" min="0" ng-model="qty" required >
+		
+		<label for="ct">Cost</label>
+		<input type="number" ng-model="cost" required >
+		
+		<hr />
+		<h2>Total: {{qty * cost | currency}}</h2>
+	</div>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+	<script type="text/javascript">
+		function InvoiceCntl($scope) {
+		  $scope.qty = 1;
+		  $scope.cost = 19.95;
+		}
+	</script>
+</body>
+</html>
