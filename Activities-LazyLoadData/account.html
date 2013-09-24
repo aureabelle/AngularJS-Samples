@@ -45,11 +45,12 @@
 		
 		.filter li {
 			display: inline-block;
-			margin-right: 20px;
 			vertical-align: top;
 		}
 		
-		.filter li a {text-decoration: none;}
+		.filter li a {
+			padding: 10px;
+			text-decoration: none;}
 		
 		.filter li a:focus {outline: none;}
 		
@@ -57,12 +58,36 @@
 			background-color: #2A6496;
 			color: #fff;
 		}
+		
+		.load-more {
+			background-color: #e0e0e0;
+			display: block;
+			margin: 10px 0;
+			padding: 10px;
+			text-align: center;
+			text-decoration: none;
+		}
+		
+		.load-more:hover {
+			background-color: #f0f0f0;
+			text-decoration: none;
+		}
+		
+		.load-more:focus {
+			outline: none;
+			text-decoration: none;
+		}
+		
+		.load-more:visited,
+		.load-more:active {
+			text-decoration: none;
+		}
 	</style>
 </head>
 <body>
 	<activities></activities>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 	<script src="app.js"></script>
 	<script src="account-activities.js"></script>
 </body>

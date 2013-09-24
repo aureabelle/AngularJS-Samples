@@ -85,46 +85,56 @@ angular.module('accountActivities', [])
 		return {
 			restrict: 'E',
 			controller: function($scope, $element, activityList){
+				var limitNumber = 5;
+			
 				$scope.activities = activityList.getActivities();
 				$scope.categories = activityList.getCategories();
-				$scope.limit = 2;
+				$scope.limit = limitNumber; // Sets the default number of entries
 				
 				$scope.filterResult = function(cty, event){
-					var allListings = activityList.getActivities(),
-						newList = [];
-						
-					event.preventDefault();
+					if ( !angular.element( event.currentTarget ).hasClass('selected') ){
 					
-					for(var i=0; i<allListings.length; i++){
-						if( allListings[i].category === cty){
-							var listing = allListings[i];
-							newList.push(listing);
+						var allListings = activityList.getActivities(),
+							newList = [];
+							
+						event.preventDefault();
+						
+						for(var i=0; i<allListings.length; i++){
+							if( allListings[i].category === cty){
+								var listing = allListings[i];
+								newList.push(listing);
+							}
 						}
+						
+						$scope.activities = newList;
+						angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
+						angular.element( event.currentTarget ).addClass('selected');
+						$scope.limit = limitNumber; // Sets the default number of entries
+					
 					}
 					
-					$scope.activities = newList;
-					angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
-					angular.element( event.currentTarget ).addClass('selected');
-					$scope.limit = 2;
 				};
 				
 				$scope.showAllResults = function(event){
-					event.preventDefault();
-					$scope.activities = activityList.getActivities();
-					
-					angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
-					angular.element( event.currentTarget ).addClass('selected');
-					$scope.limit = 2;
+					if( !angular.element( event.currentTarget ).hasClass('selected') ){
+				
+						event.preventDefault();
+						$scope.activities = activityList.getActivities();
+						
+						angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
+						angular.element( event.currentTarget ).addClass('selected');
+						$scope.limit = limitNumber; // Sets the default number of entries
+					}
 				};
 				
 				$scope.loadMore = function(event){
-					var itemsToInclude = 2;
+					var itemsToInclude = limitNumber; // Sets the number of entries to be fetched
 					event.preventDefault();
 					$scope.limit = $scope.limit + itemsToInclude;
 				};
 				
 				$scope.countItemsLoaded = function(){
-					return  $scope.limit;
+					return $scope.limit;
 				};
 				
 				console.log($scope);

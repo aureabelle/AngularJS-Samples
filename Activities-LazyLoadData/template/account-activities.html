@@ -12,7 +12,6 @@
 	
 	<hr />
 	
-	<div class="activities">
 		<div class="activity-item" data-ng-repeat="activity in activities | filter: searcher | limitTo:limit" data-ng-animate="'activity'">
 			<span class="activity-info activity-category">{{ activity.category }}</span>
 			<span class="activity-info activity-title"><a href="{{activity.link}}">{{ activity.title }}</a></span>
@@ -84,7 +83,6 @@
 			<span class="activity-info activity-timestamp">{{ activity.timestamp}}</span>
 		</div>
 	
-	</div>
 	
-	<a href="#" data-ng-click="loadMore($event)" data-ng-hide="countItemsLoaded() >= activities.length">Load more items</a>
+	<a href="#" class="load-more" data-ng-click="loadMore($event)" data-ng-hide="countItemsLoaded() >= activities.length">Load more items</a>
 </div>
