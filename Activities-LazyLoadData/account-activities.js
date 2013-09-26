@@ -85,11 +85,12 @@ angular.module('accountActivities', [])
 		return {
 			restrict: 'E',
 			controller: function($scope, $element, activityList){
-				var limitNumber = 5;
+				var limitNumber = 5, // Sets the default number of entries
+					itemsToInclude = 5; // Sets the number of entries to be fetched
 			
 				$scope.activities = activityList.getActivities();
 				$scope.categories = activityList.getCategories();
-				$scope.limit = limitNumber; // Sets the default number of entries
+				$scope.limit = limitNumber;
 				
 				$scope.filterResult = function(cty, event){
 					if ( !angular.element( event.currentTarget ).hasClass('selected') ){
@@ -109,7 +110,7 @@ angular.module('accountActivities', [])
 						$scope.activities = newList;
 						angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
 						angular.element( event.currentTarget ).addClass('selected');
-						$scope.limit = limitNumber; // Sets the default number of entries
+						$scope.limit = limitNumber;
 					
 					}
 					
@@ -123,12 +124,11 @@ angular.module('accountActivities', [])
 						
 						angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
 						angular.element( event.currentTarget ).addClass('selected');
-						$scope.limit = limitNumber; // Sets the default number of entries
+						$scope.limit = limitNumber;
 					}
 				};
 				
 				$scope.loadMore = function(event){
-					var itemsToInclude = limitNumber; // Sets the number of entries to be fetched
 					event.preventDefault();
 					$scope.limit = $scope.limit + itemsToInclude;
 				};
