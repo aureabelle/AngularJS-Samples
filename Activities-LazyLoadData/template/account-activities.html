@@ -75,12 +75,21 @@
 						</div>
 						
 					</div>
+										
 				</div>
 				<!-- Transactions End -->
 			</div>
 			
 			
-			<span class="activity-info activity-timestamp">{{ activity.timestamp}}</span>
+			<span class="activity-info activity-timestamp">{{ activity.timestamp }}</span>
+			
+			<span class="activity-info activity-status" data-ng-show="activity.category == 'Transactions'">{{ activity.feature.properties.actionType.status }}</span>
+			
+			<span class="activity-info activity-type" data-ng-show="activity.feature.properties.actionType.status == 'completed'">
+				<span data-ng-show="activity.category == 'Transactions'">{{ activity.feature.properties.actionType.name }}</span>
+			</span>
+			
+			
 		</div>
 	
 	

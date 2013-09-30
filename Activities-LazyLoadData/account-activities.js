@@ -29,16 +29,16 @@ angular.module('accountActivities', [])
 			
 			/* Transactions */
 			// Send Funds
-			{category: 'Transactions', title: 'Sent Funds', link: 'something.aspx', feature: { name: 'send funds', properties: {type: 'send funds', action: 'sent', amount: '100', currency: 'CAD', currency_symbol: '$', receiver: 'receiver@mail.com' } }, timestamp: '2 days ago'},
+			{category: 'Transactions', title: 'Sent Funds', link: 'something.aspx', feature: { name: 'send funds', properties: {type: 'send funds', action: 'sent', amount: '100', currency: 'CAD', currency_symbol: '$', receiver: 'receiver@mail.com', actionType: {name: 'outgoing', status: 'completed'} } }, timestamp: '2 days ago'},
 			
 			// Mass Pay
-			{category: 'Transactions', title: 'Sent Mass Payment', link: 'something.aspx', feature: { name: 'mass payment', properties: {type: 'mass payment', action: 'sent a mass payment' } }, timestamp: '2 days ago'},
+			{category: 'Transactions', title: 'Sent Mass Payment', link: 'something.aspx', feature: { name: 'mass payment', properties: {type: 'mass payment', action: 'sent a mass payment', actionType: {name: 'outgoing', status: 'pending'} } }, timestamp: '2 days ago'},
 			
 			// Deposit
-			{category: 'Transactions', title: 'Deposit', link: 'something.aspx', feature: { name: 'deposit', properties: {type: 'deposit', action: 'added', amount: '500', currency: 'USD', currency_symbol: '$', method: 'INTERAC Online' } }, timestamp: '2 days ago'},
+			{category: 'Transactions', title: 'Deposit', link: 'something.aspx', feature: { name: 'deposit', properties: {type: 'deposit', action: 'added', amount: '500', currency: 'USD', currency_symbol: '$', method: 'INTERAC Online', actionType: {name: 'incoming', status: 'completed'} } }, timestamp: '2 days ago'},
 			
 			// Email Invoice
-			{category: 'Transactions', title: 'Email Invoice', link: 'something.aspx', feature: { name: 'send email invoice', properties: {type: 'sent email invoice', action: 'sent an email invoice', amount: '500', currency: 'USD', currency_symbol: '$', receiver: 'receiver@email.com' } }, timestamp: '2 days ago'},
+			{category: 'Transactions', title: 'Email Invoice', link: 'something.aspx', feature: { name: 'send email invoice', properties: {type: 'sent email invoice', action: 'sent an email invoice', amount: '500', currency: 'USD', currency_symbol: '$', receiver: 'receiver@email.com', actionType: {name: 'outgoing', status: 'pending'} } }, timestamp: '2 days ago'},
 
 			/* Profile */
 			// Email address
@@ -93,12 +93,13 @@ angular.module('accountActivities', [])
 				$scope.limit = limitNumber;
 				
 				$scope.filterResult = function(cty, event){
+					event.preventDefault();
+				
 					if ( !angular.element( event.currentTarget ).hasClass('selected') ){
 					
 						var allListings = activityList.getActivities(),
 							newList = [];
 							
-						event.preventDefault();
 						
 						for(var i=0; i<allListings.length; i++){
 							if( allListings[i].category === cty){
@@ -117,9 +118,9 @@ angular.module('accountActivities', [])
 				};
 				
 				$scope.showAllResults = function(event){
+					event.preventDefault();
 					if( !angular.element( event.currentTarget ).hasClass('selected') ){
 				
-						event.preventDefault();
 						$scope.activities = activityList.getActivities();
 						
 						angular.element( event.currentTarget ).parent().parent().find('a').removeClass('selected');
