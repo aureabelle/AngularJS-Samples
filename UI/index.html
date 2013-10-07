@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html data-ng-app="uiApp">
+<head>
+    <title>Application UI</title>
+    <link rel="stylesheet" href="css/application.css" />
+    <style type="text/css">
+        .notably-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            position: absolute;
+            max-width: 300px;
+
+            // CSS3
+            -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .notably-box .notably-header,
+        .notably-box .notably-content {
+            padding: 10px;
+        }
+
+        .notably-box .notably-header {
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        .notably-box .notably-header h6 {margin-bottom: 0;}
+
+        .notably-box .notably-header .close-notably {
+            position: absolute;
+            top: 13px;
+            right: 5px;
+        }
+
+        .notably-box .notably-content {
+            font-size: 13px;
+            line-height: 21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AngularJS-based components</h1>
+
+        <h2>Icons</h2>
+        <p>The icon's text size is dependent of its parent's font size.</p>
+
+        <h4>Usage</h4>
+        <p><icon type="icon" prefix="icn" name="generic-cc" size="48" text="Generic credit card" withtext="icon-only"></icon></p>
+        <pre>&lt;icon type="icon" prefix="icn" name="generic-cc" size="48" withtext="icon-only" text="Generic credit card"&gt;&lt;/icon&gt;</pre>
+
+        <p><icon type="flag" prefix="fl" name="ca" size="16" text="Canada"></icon></p>
+        <pre>&lt;icon type="flag" prefix="fl" name="ca" size="16" text="Canada"&gt;&lt;/icon&gt;</pre>
+
+        <h6>Attributes</h6>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><code>type</code></td>
+                    <td>string</td>
+                    <td><em>icon</em> | <em>flag</em></td>
+                </tr>
+
+                <tr>
+                    <td><code>prefix</code></td>
+                    <td>string</td>
+                    <td><em>icn</em> (for icons) | <em>fl</em> (for flags)</td>
+                </tr>
+
+                <tr>
+                    <td><code>name</code></td>
+                    <td>string</td>
+                    <td>CSS selector given for the icon</td>
+                </tr>
+
+                <tr>
+                    <td><code>size</code></td>
+                    <td>number in string format</td>
+                    <td>16 | 24 | 48 | 64</td>
+                </tr>
+
+                <tr>
+                    <td><code>text</code></td>
+                    <td>string</td>
+                    <td>Text that goes with the icon</td>
+                </tr>
+
+                <tr>
+                    <td><code>withtext</code></td>
+                    <td>string</td>
+                    <td><em>(Optional)</em>: <code>icon-only</code> - means exclude the text</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <h2>Tooltip</h2>
+
+        <h4>Usage</h4>
+        <p>This <tooltip title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." text="word"></tooltip> has a tooltip.</p>
+        <pre>&lt;p&gt;This &lt;tooltip title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." text="word"&gt;&lt;/tooltip&gt; has a tooltip.&lt;/p&gt;</pre>
+
+        <p>What is <tooltip title="Hypertext Markup Language" text="HTML"></tooltip>?</p>
+        <pre>&lt;p&gt;What is &lt;tooltip title="Hypertext Markup Language" text="HTML"&gt;&lt;/tooltip&gt;?&lt;/p&gt;</pre>
+
+        <h6>Attributes</h6>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>string</td>
+                    <td>This is the tooltip content, plain text only</td>
+                </tr>
+
+                <tr>
+                    <td><code>text</code></td>
+                    <td>string</td>
+                    <td>The word of the tooltip trigger.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <h2>Notably (Popover)</h2>
+        <p>Notably can be used to accommodate blocks of information to appear in a bubble. It can contain plain text content (no HTML).</p>
+
+        <h4>Usage</h4>
+
+        <p>This is <notably title="This is notably" content="This contains plain text content.">something</notably>.</p>
+        <pre>&lt;notably title="This is notably" content="This contains plain text content."&gt;something&lt;/notably&gt;</pre>
+
+        <p>Click the icon <notably title="This is notably" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. This contains plain text content."><icon type="icon" prefix="icn" name="info" size="16" withtext="icon-only" text="Info"></icon></notably>.</p>
+        <pre>&lt;notably title="This is notably" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. This contains plain text content."&gt;&lt;icon type="icon" prefix="icn" name="info" size="16" withtext="icon-only" text="Info"&gt;&lt;/icon&gt;&lt;/notably&gt;</pre>
+
+        <h6>Attributes</h6>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attributes</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>string</td>
+                    <td>This is the header or title of the popover.</td>
+                </tr>
+                <tr>
+                    <td><code>content</code></td>
+                    <td>string</td>
+                    <td>This is the body copy of the popover.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+    </div>
+
+    <!-- AngularJS + application -->
+    <script src="js/lib/angular/1.0.7/angular.min.js"></script>
+    <script src="js/application.js"></script>
+
+    <!-- Components / Directives -->
+    <script src="js/lib/components/icon.js"></script>
+    <script src="js/lib/components/notably.js"></script>
+    <script src="js/lib/components/tooltip.js"></script>
+</body>
+</html>

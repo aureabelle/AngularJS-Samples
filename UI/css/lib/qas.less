@@ -1,0 +1,334 @@
+﻿.QAS_Header 
+{ 
+	display: block;
+	padding: 1em;
+	position: relative;
+}
+
+.QAS_Prompt {
+	position: relative;
+	padding: 20px 0 23px 10px;
+	float: left;
+	width: 400px;
+	min-height: 75px;
+}
+
+.QAS_EmailPrompt
+{
+	padding-top: 10px;
+	padding-left: 1em;
+	float: left;
+	width: 400px;
+}
+
+.QAS_PhonePrompt
+{
+	padding-top: 10px;
+	padding-left: 1em;
+	width: 400px;
+}
+
+
+.QAS_EmailPhoneContinue
+{
+	right: 0px;
+	position: absolute;
+	bottom: 0px;
+	padding-top: 2em;
+}
+
+.QAS_Input
+{
+	width: 400px;
+	padding: 0em 0em 0.3em;
+	position: absolute;
+	bottom: 0;
+}
+
+.QAS_PhoneInput
+{
+	padding: 0em 0em 0.3em;
+	float: left;
+}
+
+.QAS_EmailInput
+{
+	padding: 0em 0em 0.3em;
+}
+
+.QAS_RightDetails
+{
+	position: relative;
+	padding: 20px 20px 85px 10px;
+	float: right;
+	width: 350px;
+}
+
+.QAS_RightSidePrompt
+{
+	padding-bottom: .5em;
+}
+
+.QAS_RightSidePromptText
+{
+	font-weight: bold;
+	margin-bottom: .5em;
+	border-bottom: 1px solid @grayLightest;
+}
+
+.QAS_RightDetails table {
+	margin-top: -10px;
+	font-size: 1.1em;
+}
+
+.QAS_EditLink {
+	padding-left: 1em; }
+
+.QAS_EditLink a, .QAS_Picklist a {
+	color: @linkColor; }
+
+.QAS_EditLink a:hover, .QAS_Picklist a:hover {
+	color: @linkColorHover;
+	text-decoration: underline; }
+
+.QAS_Picklist
+{
+	position: relative;
+	top: -10px;
+	padding: 5px 0 0 10px;
+	margin-bottom: -20px;
+	width: 400px;
+	float: left;
+}
+
+.QAS_DeliverableWarning {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	font-size: .8em;
+}
+
+.QAS_MultPick, .QAS_Pick
+{
+	display: none;
+	width: 400px;
+	max-height: 200px;
+	overflow: auto;
+}
+
+.QAS_MultPick { margin-top: -33px; }
+
+.QAS_ShowPick
+{
+	padding-bottom: .6em;
+	margin-top: 12px;
+}
+
+.QAS_Pick table, .QAS_MultPick table {
+	width: 375px;
+	font-size: 1.1em;
+}
+
+.QAS_Pick table td, .QAS_MultPick table td
+{
+	padding: 3px 5px;
+}
+
+.QAS_Pick table td:first-child, .QAS_MultPick table td:first-child {
+	border-left: 3px solid @white;
+}
+
+.QAS_Pick table td:first-child {
+	width: 280px;
+}
+
+.QAS_Pick table tr:hover td, .QAS_MultPick table tr:hover td {
+	background-color: @blueRowHover;
+}
+
+.QAS_Pick table tr:hover td:first-child, .QAS_MultPick table tr:hover td:first-child
+{
+	border-left: 3px solid @payzaGreen;
+}
+
+.QAS_EmailSuggPrompt
+{
+    font-size: 1.0em;
+}
+
+.QAS_PromptText
+{
+	font-weight: bold;
+	margin-bottom: .5em;
+	border-bottom: 1px solid @grayLightest;
+}
+
+.QAS_EmailPromptText
+{
+	margin-bottom: .5em;
+}
+
+.QAS_EmailErrText
+{
+	margin-bottom: .5em;
+	color: Red;
+}
+
+.QAS_PhonePromptText
+{
+	margin-bottom: .5em;
+}
+
+.QAS_PhoneErrText
+{
+	margin-bottom: .5em;
+	color: Red;
+}
+
+.QAS_PromptData table
+{
+	position: relative;
+	top: -40px;
+	font-size: 1.1em;
+}
+.QAS_EmailPromptData table
+{
+	background-color: #e0e0ff;
+}
+
+#QAS_RefineText
+{
+	background: #eaecf6;
+	border: 1px solid #aaaab8;
+	width: 100px;
+	margin-right: 1em;
+	float: left;
+}
+
+#QAS_EmailRefineText
+{
+	background: #eaecf6;
+	border: 1px solid #aaaab8;
+	width: 275px;
+	margin-right: 1em;
+}
+
+#QAS_PhoneRefineText
+{
+	background: #eaecf6;
+	border: 1px solid #aaaab8;
+	width: 200px;
+	margin-right: 1em;
+}
+
+#QAS_RefineBtn, #QAS_AcceptOriginal, #QAS_NoApt, #QAS_TDContinue {
+	position: absolute;
+	bottom: 25px;
+	left: 10px;
+	color: @white;
+	font-weight: bold;
+	padding: 5px 10px;
+	border: 1px solid;
+	border-bottom-color: #185f01;
+	border-left-color: #357d18;
+	border-right-color: #357d18;
+	border-top-color: #5da839;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	z-index: 9999;
+		
+	// CSS3
+	.border-radius (4px);
+	@shadow: inset 0 1px 0 0 #86c775, 0 0 0 3px rgba(0, 0, 0, 0.1);
+	.box-shadow(@shadow);
+	#gradient > .vertical (#61b64a, #2e881d);
+}
+
+#QAS_RefineBtn:hover, #QAS_AcceptOriginal:hover, #QAS_NoApt:hover, #QAS_TDContinue:hover {
+	// CSS3
+	#gradient > .vertical (#2e881d, #2e881d);
+}
+
+#QAS_RefineBtn {
+	position: relative;
+	float: left;
+	top: -1px;
+	left: 0;
+}
+
+#QAS_NoApt
+{
+	position: relative;
+	float: left;
+	clear: left;
+	left: 0;
+	top: 3px;
+}
+
+/* "Please wait" message
+-------------------------*/
+#QAS_Wait {
+	position: relative;
+	padding: 0;
+}
+
+#ui-dialog-title-QAS_Wait {
+	display: block;
+	width: 100%;
+	font-size: 1.8em;
+	line-height: 1.5em;
+	text-align: center;
+	color: #444;
+	padding: 15px;
+	background: @white;
+	
+	// CSS3
+	.border-radius (6px);
+	.box-shadow(0 0 9px 3px rgba(0, 0, 0, 0.3));
+}
+#ui-dialog-title-QAS_Wait:after {
+	content: "";
+	display: block;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	margin: 15px auto 5px;
+	background: @white url(../images/indicator.gif) no-repeat;
+}
+
+/* Main dialog */
+#ui-dialog-title-QAS_Dialog {
+	display: block;
+	background: @white;
+	height: 21px;
+	padding: 15px 15px 0;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: @grayDark;
+
+	// CSS3
+	.border-radius(6px 6px 0px 0px);
+}
+#QAS_Dialog {
+	background: @white;
+	padding: 51px 15px 15px;
+	margin-top: -36px;
+	font-size: 1.2em;
+	overflow: auto;
+	color: @gray;
+
+	// CSS3
+	.border-radius(6px);
+	.box-shadow(0 0 9px 3px rgba(0, 0, 0, 0.3));
+}
+
+/* Header message
+------------------*/
+#QAS_Dialog .QAS_Header {
+	background: @errorBackground !important;
+	border: 1px solid @errorBorder;
+	color: @grayDarker;
+
+	// CSS3
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	.border-radius(3px); }

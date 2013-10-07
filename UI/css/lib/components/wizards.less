@@ -1,0 +1,256 @@
+// Wizard
+// ---------
+
+.wizard-step {min-height: 250px;}
+
+.wizard-buttons input {
+		/*font-weight: 700;
+		padding: 6px 12px;*/}
+
+.wizard-buttons td {
+		padding: 10px;
+		padding-right: 0;}
+
+.wizard-header {margin-bottom: 16px;}
+
+.wizard-index {
+		margin: 0; 
+		margin-left: 1px;
+		position: relative; 
+		vertical-align: top;
+		width: 220px; 
+		z-index: 100;}
+
+.wizard-index td {
+		color: @gray;
+		border: 1px solid #dbdbdb; 
+		font-size: 15px;
+		height: 56px;
+		padding: 0 15px;
+		text-shadow: 0 1px 0 #ccc;
+		width: 220px;}
+
+.wizard-index .active {
+		background: #f9fff2 url("../images/wizard-current.png") no-repeat right top;
+		border-right: 0;
+		color: @white; 
+		font-weight: 700; 
+		text-shadow: 0 -1px 0 #367d09;}
+
+.wizard-step {
+		background-color: #f9fff2; 
+		border: 1px solid #dbdbdb;  
+		display: block; 
+		left: -1px; 
+		padding: 20px; 
+		position: relative;}
+
+.wizard {width: 100%;}
+
+.wizard fieldset {/*margin: 0;*/}
+
+.wizard .form-horizontal label {/*width: 180px;*/} 
+
+.wizard .form-horizontal .controls {/*margin-left: 180px;*/}
+
+.wizard .form-horizontal textarea {
+		/*height: 175px;
+		width: 350px;*/}
+
+.span8 .wizard .form-horizontal label {/*width: 140px;*/}
+
+.span8 .wizard .form-horizontal .controls {/*margin-left: 140px;*/}
+
+.span8 .wizard .form-horizontal textarea {/*width: 270px;*/}
+
+.span8 .wizard-index {/*width: 140px;*/}
+
+// Radiostyle
+.wizard .radiostyle {
+		display: inline-block; 
+		margin: 5px 0;
+		width: 345px;}
+
+.wizard .radiostyle label {max-width: 310px;}
+
+.wizard .radiostyle .radiostyle {margin: 0;}
+
+.wizard .radiostyle .radiostyle input {
+		/*margin: 0;
+		margin-right: 5px; margin-top: -3px;*/}
+
+.wizard .radiostyle label {/*margin-top: 0;*/}
+
+.wizard table.radiostyle .radiostyle input {/*margin-top: 1px;*/}
+
+// Wizard Row
+.wizard-row {
+		background: url(../images/backgrounds/wizard-row-bg.png) repeat-y right top; 
+		margin-top: 90px; 
+		min-height: 360px;}
+
+.wizard-row .wizard .sidebar {
+		font-size: 13px; 
+		margin-top: -100px; 
+		position: absolute; 
+		width: /*964px*/ 940px;}
+
+.wizard-row .wizard .sidebar > div {background: url(../images/backgrounds/wizard-staff.png) repeat-x left 18px;}
+
+.wizard-row .wizard .sidebar .step-container-1 div {
+		background: url(../images/backgrounds/wizard-bullet.png) no-repeat center 3px;
+		color: #cfcfcf; 
+		text-align: center; 
+		width: 99%;}
+
+.wizard-row .wizard .sidebar .step-container-2 div {
+		background: url(../images/backgrounds/wizard-bullet.png) no-repeat center 3px;
+		color: #cfcfcf; 
+		text-align: center; 
+		width: 49%;}
+
+.wizard-row .wizard .sidebar .step-container-3 div {
+		background:url(../images/backgrounds/wizard-bullet.png) no-repeat center 3px;
+		color: #cfcfcf; 
+		text-align: center; 
+		width: 32%;}
+
+.wizard-row .wizard .sidebar .step-container-4 div {
+		background:url(../images/backgrounds/wizard-bullet.png) no-repeat center 3px;
+		color: #cfcfcf; 
+		text-align: center; 
+		width: 24%;}
+
+.wizard-row .wizard .sidebar .step-container-5 div {
+		background:url(../images/backgrounds/wizard-bullet.png) no-repeat center 3px;
+		color: #cfcfcf; 
+		text-align: center; 
+		width: 19%;}
+
+.wizard-row .wizard .sidebar div div {
+		display: inline-block; 
+		vertical-align: top;}
+
+.wizard-row .wizard .sidebar span {
+		font-size:1.3em; 
+	color: #acacac;
+	display: block; 
+		line-height: 38px}
+
+.wizard-row .wizard .sidebar div.active {
+	background:url(../images/backgrounds/wizard-active.png) no-repeat center 3px;
+	color: #349022;}
+
+.wizard-row .wizard .sidebar .active span {color: @white; font-weight:700}
+
+.wizard-row .wizard .sidebar div.done {background: url(../images/backgrounds/wizard-done.png) no-repeat center 3px;}
+
+.wizard-row .wizard .sidebar .done span {visibility: hidden;}
+
+.wizard-row .wizard .step {
+	padding: 0;
+	padding-left: 100px; padding-right: 10px;}
+
+.wizard-row .wizard .nav {
+	font-size: 1.3em;
+	padding-bottom: 25px; padding-left: 100px; padding-right: 10px; padding-top: 15px;
+	margin-bottom: 50px;}
+
+.wizard-row .wizard .nav input[type="submit"] {font-size: 100%;}
+
+.wizard-row .span3 {
+		margin-left: /*21px*/ 1px; // Remove margin left to bring it side by side with span5
+		min-height: 200px;
+		padding: 0 10px; 
+		width: 335px; 
+		
+		// CSS3
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 1%, rgba(243,243,243,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255,255,255,1)), color-stop(100%,rgba(243,243,243,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(243,243,243,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(243,243,243,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(243,243,243,1) 100%); /* IE10+ */
+		background: linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(243,243,243,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */}
+
+.wizard-row .span3 .box {
+		background: none;
+		border: none;}
+
+.wizard-row .span3 .box .title {
+		background: none;
+		border: none;}
+
+.wizard-row .span3 .box .title h3 {
+		color: #379324; 
+		background: url("../images/icons/infopanel-icon.png") no-repeat left 5px; 
+		font-size: 18px; 
+		font-weight: normal;
+		line-height: 33px; 
+		padding-left: 30px;}
+
+.wizard-row .span3 .box ol,
+.wizard-row .span3 .box ul {margin: 10px 20px;}
+
+.wizard label {/*margin-top: 8px;*/}
+
+.wizard label:first-child {/*margin-top: 0;*/}
+
+/*.wizard input[type="text"], 
+.wizard input[type="password"], 
+.wizard textarea {width: 345px;}*/
+
+/*
+.wizard select {width: 355px;}
+
+.wizard input[type="text"], 
+.wizard input[type="password"], 
+.wizard select {height: 30px;}
+
+.wizard input[type="text"], 
+.wizard input[type="password"] {padding: 0 4px;}
+
+.wizard textarea {height: 100px;}
+
+.wizard .nav {font-size: 14px;}*/
+
+/*
+.wizard .nav .btn-primary {
+		 
+		font-size: 15px; 
+		padding: 20px;
+		padding-bottom: 9px; padding-top: 6px; 
+		margin-bottom: 0; margin-right: 10px;
+		text-shadow: 0px 1px 2px #383838;}
+
+.wizard .nav .btn-cancel {
+		border: none; 
+		background: none; 
+		padding: 2px; 
+		color: #0a69c5; 
+		text-decoration:underline;
+
+		// CSS3
+		.box-shadow (none);
+		.transition (none);}*/
+/*
+.wizard h3 + fieldset {margin-top: 8px;}
+
+.wizard .condensed th, .wizard .condensed input {font-size: 0.9em;}
+
+.wizard .condensed td .radiostyle {margin: 0;}
+
+.wizard .condensed td .radiostyle input {
+		margin: 0;
+		margin-top: 3px;}
+
+.no-wizard-msg {margin-top: -50px;}
+
+.wizard .inline-inputs .radiostyle, 
+.wizard .inline-inputs .address-dropdown {display: inline;}*/
+
+.wizard .table th,
+.wizard .table td {padding: 5px;}
+
+.hide {display: none;}
